@@ -1,5 +1,3 @@
-console.log('Hello world!');
-
 import './css/styles.css';
 import countryFilterTpl from './templates/country-filter.hbs';
 import countryCardTpl from './templates/country-card.hbs';
@@ -35,15 +33,33 @@ function onInput(e) {
 //         console.log('Oops, there is no country with that name');
 //       };
 
-function renderCountryCard (country) {
-        const markupCountryFilter = country.map((item) => 
-        `<li><div class='card-img-top'>
-        <img src=${item.flags.svg} alt=${item.name.common} width='30' />
+function renderCountryCard(country) {
+  if (country.length > 10) {
+    console.log('Too many matches found. Please enter a more specific name.');
+    return;
+  }
+  if (country.length >= 2 && country.length <= 10) {
+    const markupCountryFilter = country
+      .map(
+        item =>
+          `<li><div class='filter-img-top'>
+        <img src=${item.flags.svg} alt=${item.name.common} width='30'/>
       </div>${item.name.common}</li>`
-        ).join(''); 
-        return refs.list.innerHTML = markupCountryFilter
-      };
+      )
+      .join('');
+    return (refs.list.innerHTML = markupCountryFilter);
+  }
+  if (country.length < 2) {
+    refs.list.innerHTML = '';
+    const markupCountryInfo = country.map(item => {
+      return countryCardTpl(item);
+    });
+    refs.container.innerHTML = markupCountryInfo;
+  } else {
+    return error;
+  }
+}
 
-       function onFetchError (error) {
-        console.log('Oops, there is no country with that name');
-      };
+function onFetchError(error) {
+  console.log('Oops, there is no country with that name');
+}

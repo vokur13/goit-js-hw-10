@@ -1,8 +1,24 @@
-body{
-        background-color: rgb(207, 201, 201);
+body {
+  background-color: rgb(207, 201, 201);
 }
 
-h1 {
-  color: hotpink;
-  font-family: cursive;
+ul {
+  list-style: none;
+}
+
+li {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.filter-img-top {
+  margin-right: 15px;
+}
+
+.card-text {
+  font-weight: bold;
+}
+
+.card-span {
+  font-weight: lighter;
 }
