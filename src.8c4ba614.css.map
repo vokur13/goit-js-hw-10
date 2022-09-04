@@ -1,1 +1,0 @@
-{"version":3,"sources":["styles.css"],"names":[],"mappings":"AAAA,KACQ,wBACR,CAEA,GACE,aAAc,CACd,mBACF","file":"src.8c4ba614.css","sourceRoot":"../src","sourcesContent":["body{\n        background-color: rgb(207, 201, 201);\n}\n\nh1 {\n  color: hotpink;\n  font-family: cursive;\n}\n"]}
