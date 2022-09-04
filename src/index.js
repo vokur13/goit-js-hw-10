@@ -14,13 +14,17 @@ refs.input.addEventListener('input', LodashDebounce(onInput, DEBOUNCE_DELAY));
 
 function onInput(e) {
   const target = e.target;
-  const country = target.value;
-  fetchCountries(country)
-    .then(renderCountryCard)
-    .catch(onFetchError)
-    .finally(() => {
-      country.trim();
-    });
+  const trimValue = target.value;
+  const country = trimValue.trim();
+  if (country) {
+    fetchCountries(country)
+      .then(renderCountryCard)
+      .catch(onFetchError)
+      .finally(() => {});
+  }
+  refs.list.innerHTML = '';
+  refs.container.innerHTML = '';
+  return;
 }
 
 //  function renderCountryCard (country) {
