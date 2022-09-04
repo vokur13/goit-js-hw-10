@@ -2,9 +2,10 @@ console.log('Hello world!');
 
 import './css/styles.css';
 // import API from '../js/api-service-hw-10';
+import countryCardTpl from './templates/country-card.hbs';
 import { fetchCountries } from './js/fetchCountries';
-import { renderCountryCard } from './js/fetchCountries';
-import { onFetchError } from './js/fetchCountries';
+// import { renderCountryCard } from './js/fetchCountries';
+// import { onFetchError } from './js/fetchCountries';
 import LodashDebounce from 'lodash.debounce';
 import getRefs from './js/get-refs';
 
@@ -24,3 +25,14 @@ function onInput(e) {
       country.trim();
     });
 }
+
+ function renderCountryCard (country) {
+        const markupCountryInfo = country.map((item) => {
+          return countryCardTpl(item);
+        });
+        refs.container.innerHTML = markupCountryInfo;
+      };
+      
+       function onFetchError (error) {
+        console.log('Oops, there is no country with that name');
+      };
