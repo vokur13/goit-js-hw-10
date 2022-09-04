@@ -11,6 +11,15 @@ li {
   margin-bottom: 10px;
 }
 
+.card-header {
+  display: flex;
+  align-items: baseline;
+}
+
+.card-img-top {
+  margin-right: 15px;
+}
+
 .filter-img-top {
   margin-right: 15px;
 }
