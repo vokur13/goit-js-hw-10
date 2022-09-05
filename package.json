@@ -1,21 +1,21 @@
 {
-  "name": "goit-js-mod-10-hw-ii",
+  "name": "goit-js-hw-10",
   "version": "1.0.0",
   "description": "",
-  "homepage": "https://vokur13.github.io/goit-js-mod-10-hw-ii",
+  "homepage": "https://vokur13.github.io/goit-js-hw-10",
   "scripts": {
     "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /goit-js-mod-10-hw-ii/"
+    "build": "parcel build src/*.html --public-url /goit-js-hw-10/"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vokur13/goit-js-mod-10-hw-ii.git"
+    "url": "git+https://github.com/vokur13/goit-js-hw-10.git"
   },
   "keywords": [],
   "author": "VOLODYMYR_KUROV",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/vokur13/goit-js-mod-10-hw-ii/issues"
+    "url": "https://github.com/vokur13/goit-js-hw-10/issues"
   },
   "dependencies": {
     "lodash.debounce": "^4.0.8",
