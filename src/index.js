@@ -27,46 +27,21 @@ function onInput(e) {
   return;
 }
 
-//  function renderCountryCard (country) {
-//         const markupCountryInfo = country.map((item) => {
-//           return countryCardTpl(item);
-//         });
-//         refs.container.innerHTML = markupCountryInfo;
-//       };
-
-//        function onFetchError (error) {
-//         console.log('Oops, there is no country with that name');
-//       };
+// Реализация разметки через Handelbars
 
 // function renderCountryCard(country) {
-//   if (country.length > 10) {
-//     Notiflix.Notify.warning(
-//       'Too many matches found. Please enter a more specific name.'
-//     );
-//     console.log('Too many matches found. Please enter a more specific name.');
-//     return;
-//   }
-//   if (country.length >= 2 && country.length <= 10) {
-//     const markupCountryFilter = country
-//       .map(
-//         item =>
-//           `<li><div class='filter-img-top'>
-//         <img src=${item.flags.svg} alt=${item.name.common} width='30'/>
-//       </div>${item.name.common}</li>`
-//       )
-//       .join('');
-//     return (refs.list.innerHTML = markupCountryFilter);
-//   }
-//   if (country.length < 2) {
-//     refs.list.innerHTML = '';
-//     const markupCountryInfo = country.map(item => {
-//       return countryCardTpl(item);
-//     });
-//     refs.container.innerHTML = markupCountryInfo;
-//   } else {
-//     return error;
-//   }
+//   const markupCountryInfo = countryFilterTpl(country);
+//   refs.list.innerHTML = markupCountryInfo;
 // }
+
+// function renderCountryCard(country) {
+//   const markupCountryInfo = country.map(item => {
+//     return countryCardTpl(item);
+//   });
+//   refs.container.innerHTML = markupCountryInfo;
+// }
+
+// Реализация разметки карточки страны через шаблонную строку
 
 function renderCountryCard(country) {
   if (country.length > 10) {
@@ -77,15 +52,9 @@ function renderCountryCard(country) {
     return;
   }
   if (country.length >= 2 && country.length <= 10) {
-    const markupCountryFilter = country
-      .map(
-        item =>
-          `<li><div class='filter-img-top'>
-        <img src=${item.flags.svg} alt=${item.name.common} width='30'/>
-      </div>${item.name.common}</li>`
-      )
-      .join('');
-    return (refs.list.innerHTML = markupCountryFilter);
+    const markupCountryInfo = countryFilterTpl(country);
+    refs.list.innerHTML = markupCountryInfo;
+    return;
   }
   if (country.length < 2) {
     refs.list.innerHTML = '';

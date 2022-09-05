@@ -1,20 +1,20 @@
-{{!-- <div class='filter'>
-{{#each name}}
-      <li class="country-list country-list__item">
-                <div class='filter-img-top'>
-                        <img src='{{flags.svg}}' alt='{{name.common}}' width='30' />
-                </div>
-                <p class='card-text'>{{name.common}}</p>
-        </li>
-    {{/each}}
-</div> --}}
+{{#each this}}
+  <li class='country-list country-list__item'>
+    <div class='filter-img-top'>
+      <img src='{{flags.svg}}' alt='{{name.common}}' width='30' />
+    </div>
+    <p class='card-text'>{{name.common}}</p>
+  </li>
+{{/each}}
 
+{{! Реализация разметки через шаблонную строку  }}
 
-
-    <div class='filter'>
-<ul class="list-group"></ul>
-    {{#each name}}
-      <li class="list-group-item">{{name.common}}</li>
-    {{/each}}
-    </ul>
-</div>
+{{! const markupCountryFilter = country
+    .map(
+    item =>
+    `<li><div class='filter-img-top'>
+    <img src=${item.flags.svg} alt=${item.name.common} width='30'/>
+    </div>${item.name.common}</li>`
+    )
+    .join('');
+    return (refs.list.innerHTML = markupCountryFilter); }}

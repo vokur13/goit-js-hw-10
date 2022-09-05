@@ -10,6 +10,17 @@
     <p class='card-text'>Population:
       <span class='card-span'>{{population}}</span></p>
     <p class='card-text'>Languages:
-      <span class='card-span'>{{languages}}</span></p>
+      <span class='card-span'>{{languages}}</span>
+      {{!-- {{#each languages}}
+        <span class='card-span'>{{@key}}: {{this}}</span>
+      {{/each}} --}}
+      {{!-- {{#with languages}}
+        <span class='card-span'>{{@key}}: {{this}}</span>
+      {{/with}} --}}
+      {{!-- {{#each languages}}
+    {{#with (lookup ../{{this}})~}}
+    {{/with}}
+{{/each}} --}}
+    </p>
   </div>
 </div>
