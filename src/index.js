@@ -6,7 +6,7 @@ import LodashDebounce from 'lodash.debounce';
 import Notiflix from 'notiflix';
 import getRefs from './js/get-refs';
 
-const DEBOUNCE_DELAY = 500;
+const DEBOUNCE_DELAY = 300;
 
 const refs = getRefs();
 
