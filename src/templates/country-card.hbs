@@ -11,6 +11,11 @@
       <span class='card-span'>{{population}}</span></p>
     <p class='card-text'>Languages:
       <span class='card-span'>{{languages}}</span>
+      <ul class='card__languages'>
+        {{#each languages}}
+          <li>{{this.name}}</li>
+        {{/each}}
+      </ul>
       {{!-- {{#each languages}}
         <span class='card-span'>{{@key}}: {{this}}</span>
       {{/each}} --}}
