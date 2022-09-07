@@ -11,21 +11,39 @@
       <span class='card-span'>{{population}}</span></p>
     <p class='card-text'>Languages:
       <span class='card-span'>{{languages}}</span>
-      <ul class='card__languages'>
-        {{#each languages}}
-          <li>{{this.name}}</li>
+    </p>
+    <p class='card-text'>Languages:
+      {{#with this}}
+        <p>{{log this}}</p>
+        <p>{{log languages}}</p>
+        {{#each languages as |value key|}}
+          <p>{{key}}: {{value}}</p>
         {{/each}}
-      </ul>
-      {{!-- {{#each languages}}
-        <span class='card-span'>{{@key}}: {{this}}</span>
-      {{/each}} --}}
-      {{!-- {{#with languages}}
-        <span class='card-span'>{{@key}}: {{this}}</span>
-      {{/with}} --}}
-      {{!-- {{#each languages}}
-    {{#with (lookup ../{{this}})~}}
-    {{/with}}
-{{/each}} --}}
+      {{/with}}
     </p>
   </div>
 </div>
+
+{{!-- {{#with user}}
+  {{#each language}}
+    <p>{{this}}</p>
+  {{/each}}
+{{/with}} --}}
+
+{{!-- {{#with user as |x|}}
+  <p>{{x.name}}</p>
+  {{#each x.language}}
+    <p>{{this}}</p>
+  {{/each}}
+{{/with}} --}}
+
+{{!-- {{#each user as |key value|}}
+  <p>{{log this}}</p>
+{{/each}} --}}
+
+{{!-- {{#each user as |xValue xKey|}}
+  <p>{{@key}}:{{this}}</p>
+  {{#each xValue/language as |yValue yKey|}}
+    <p>{{yValue}}</p>
+  {{/each}}
+{{/each}} --}}
